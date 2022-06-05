@@ -47,7 +47,7 @@ const posts = {
         const updatePost = await Post.findByIdAndUpdate(`${id}`, {name, content}, {new: true, runValidators: true});
         handleResponse.success(res, updatePost);
       }else{
-        handleResponse,errorNew(400, "內文資料未填", next);
+        handleResponse.errorNew(400, "內文資料未填", next);
       }
     }else{
       handleResponse.errorNew(400, "無此筆資料", next);
